@@ -26,3 +26,13 @@ ${hakusana}    ps5
     # Expected Result:  
     
     Open Browser    ${url}    Chrome
+    ...    options=add_argument("disable-search-engine-choice-screen"); add_experimental_option("detach", True)
+        Maximize Browser Window
+
+    Click Element    name:q
+    Input Text    name:q    ps5
+    Press Keys    name:q    ENTER
+
+    Sleep    5s
+
+    Page Should Contain Element    xpath://a[@title="Lisää koriin"]
