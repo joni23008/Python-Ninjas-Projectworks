@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.11.5 on win32)" generated="2024-10-07T09:55:07.471874" rpa="false" schemaversion="5">
+<suite id="s1" name="Python-Ninjas-Projectworks" source="C:\Users\jonim\Documents\GitHub\Python-Ninjas-Projectworks">
+<suite id="s1-s1" name="RobotFiles" source="C:\Users\jonim\Documents\GitHub\Python-Ninjas-Projectworks\RobotFiles">
+<suite id="s1-s1-s1" name="Joni" source="C:\Users\jonim\Documents\GitHub\Python-Ninjas-Projectworks\RobotFiles\joni.robot">
+<test id="s1-s1-s1-t1" name="TC_UI_1: Verify that the user can select a flight from Boston to Cairo and view flight details" line="11">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-10-07T09:55:07.652192" level="INFO">Opening browser 'Chrome' to base url 'http://jimms.fi'.</msg>
+<arg>${url}</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-10-07T09:55:07.652192" elapsed="2.586457"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-10-07T09:55:10.239602" elapsed="2.086298"/>
+</kw>
+<status status="PASS" start="2024-10-07T09:55:07.652192" elapsed="4.673708"/>
+</test>
+<status status="PASS" start="2024-10-07T09:55:07.500492" elapsed="4.825408"/>
+</suite>
+<status status="PASS" start="2024-10-07T09:55:07.498463" elapsed="4.833477"/>
+</suite>
+<status status="PASS" start="2024-10-07T09:55:07.475196" elapsed="4.856744"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Python-Ninjas-Projectworks">Python-Ninjas-Projectworks</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="RobotFiles">Python-Ninjas-Projectworks.RobotFiles</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Joni">Python-Ninjas-Projectworks.RobotFiles.Joni</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
