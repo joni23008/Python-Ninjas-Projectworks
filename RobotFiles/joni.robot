@@ -11,6 +11,9 @@ ${url}    http://jimms.fi
 ${hakusana}    ps5
 
 *** Test Cases ***
+0: Asetetaan screenshot-kansio
+    Set Screenshot Directory    C:\\Users\\jonim\\Documents\\GitHub\\Python-Ninjas-Projectworks\\Screenshots
+    
 1: Onko kaikilla tuotealueilla "landing page"
 
     # Test Case ID: 1
