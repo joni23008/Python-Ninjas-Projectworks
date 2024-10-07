@@ -1,38 +1,465 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.11.5 on win32)" generated="2024-10-07T09:55:07.471874" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0.1 (Python 3.11.5 on win32)" generated="2024-10-07T14:10:18.326198" rpa="false" schemaversion="5">
 <suite id="s1" name="Python-Ninjas-Projectworks" source="C:\Users\jonim\Documents\GitHub\Python-Ninjas-Projectworks">
 <suite id="s1-s1" name="RobotFiles" source="C:\Users\jonim\Documents\GitHub\Python-Ninjas-Projectworks\RobotFiles">
 <suite id="s1-s1-s1" name="Joni" source="C:\Users\jonim\Documents\GitHub\Python-Ninjas-Projectworks\RobotFiles\joni.robot">
-<test id="s1-s1-s1-t1" name="TC_UI_1: Verify that the user can select a flight from Boston to Cairo and view flight details" line="11">
+<test id="s1-s1-s1-t1" name="0: Asetetaan screenshot-kansio" line="15">
+<kw name="Set Screenshot Directory" owner="SeleniumLibrary">
+<arg>C:\\Users\\jonim\\Documents\\GitHub\\Python-Ninjas-Projectworks\\Screenshots</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" start="2024-10-07T14:10:18.499995" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-10-07T14:10:18.499995" elapsed="0.000000"/>
+</test>
+<test id="s1-s1-s1-t2" name="1: Onko kaikilla tuotealueilla &quot;landing page&quot;" line="18">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-10-07T09:55:07.652192" level="INFO">Opening browser 'Chrome' to base url 'http://jimms.fi'.</msg>
+<msg time="2024-10-07T14:10:18.499995" level="INFO">Opening browser 'Chrome' to base url 'http://jimms.fi'.</msg>
 <arg>${url}</arg>
 <arg>Chrome</arg>
+<arg>options=add_argument("disable-search-engine-choice-screen"); add_experimental_option("detach", True)</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-10-07T09:55:07.652192" elapsed="2.586457"/>
+<status status="PASS" start="2024-10-07T14:10:18.499995" elapsed="2.006751"/>
 </kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-10-07T09:55:10.239602" elapsed="2.086298"/>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-10-07T14:10:20.507745" elapsed="0.310610"/>
 </kw>
-<status status="PASS" start="2024-10-07T09:55:07.652192" elapsed="4.673708"/>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2024-10-07T14:10:21.000733" level="INFO">${count} = 11</msg>
+<var>${count}</var>
+<arg>xpath:/html/body/header/div/div[1]/jim-drilldown-mega-menu/nav/ul/li[*]/a</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2024-10-07T14:10:20.819846" elapsed="0.181901"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-07T14:10:21.001747" level="INFO">11</msg>
+<arg>${count}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.001747" elapsed="0.000998"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-10-07T14:10:21.002745" level="INFO">${counter} = 1</msg>
+<var>${counter}</var>
+<arg>1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.002745" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To Integer" owner="BuiltIn">
+<msg time="2024-10-07T14:10:21.003735" level="INFO">${counter} = 1</msg>
+<var>${counter}</var>
+<arg>1</arg>
+<doc>Converts the given item to an integer number.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.003735" elapsed="0.000000"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-07T14:10:21.004873" level="INFO">1</msg>
+<arg>${counter}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.004873" elapsed="0.001068"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-07T14:10:21.006919" level="INFO">Clicking element 'xpath=/html/body/header/div/div[1]/jim-drilldown-mega-menu/nav/ul/li[1]/a'.</msg>
+<arg>xpath=/html/body/header/div/div[1]/jim-drilldown-mega-menu/nav/ul/li[${counter}]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.005941" elapsed="0.114978"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Page Should Contain Link" owner="SeleniumLibrary">
+<msg time="2024-10-07T14:10:21.147665" level="INFO">Current page contains link 'https://www.jimms.fi/fi/Product/Tietokoneet'.</msg>
+<arg>https://www.jimms.fi/fi/Product/${tuotealue}</arg>
+<doc>Verifies link identified by ``locator`` is found from current page.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.120919" elapsed="0.026746"/>
+</kw>
+<arg>Page Should Contain Link</arg>
+<arg>https://www.jimms.fi/fi/Product/${tuotealue}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.120919" elapsed="0.026746"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-10-07T14:10:21.148708" level="INFO">${counter} = 2</msg>
+<var>${counter}</var>
+<arg>${counter + 1}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.148708" elapsed="0.001008"/>
+</kw>
+<var name="${tuotealue}">Tietokoneet</var>
+<status status="PASS" start="2024-10-07T14:10:21.004873" elapsed="0.144843"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-07T14:10:21.150379" level="INFO">2</msg>
+<arg>${counter}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.149716" elapsed="0.001087"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-07T14:10:21.151128" level="INFO">Clicking element 'xpath=/html/body/header/div/div[1]/jim-drilldown-mega-menu/nav/ul/li[2]/a'.</msg>
+<arg>xpath=/html/body/header/div/div[1]/jim-drilldown-mega-menu/nav/ul/li[${counter}]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.150803" elapsed="0.075672"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Page Should Contain Link" owner="SeleniumLibrary">
+<msg time="2024-10-07T14:10:21.274362" level="INFO">Current page contains link 'https://www.jimms.fi/fi/Product/Komponentit'.</msg>
+<arg>https://www.jimms.fi/fi/Product/${tuotealue}</arg>
+<doc>Verifies link identified by ``locator`` is found from current page.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.228254" elapsed="0.046108"/>
+</kw>
+<arg>Page Should Contain Link</arg>
+<arg>https://www.jimms.fi/fi/Product/${tuotealue}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.227255" elapsed="0.047107"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-10-07T14:10:21.275505" level="INFO">${counter} = 3</msg>
+<var>${counter}</var>
+<arg>${counter + 1}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.274362" elapsed="0.001143"/>
+</kw>
+<var name="${tuotealue}">Komponentit</var>
+<status status="PASS" start="2024-10-07T14:10:21.149716" elapsed="0.126793"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-07T14:10:21.277518" level="INFO">3</msg>
+<arg>${counter}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.276509" elapsed="0.001009"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-07T14:10:21.278510" level="INFO">Clicking element 'xpath=/html/body/header/div/div[1]/jim-drilldown-mega-menu/nav/ul/li[3]/a'.</msg>
+<arg>xpath=/html/body/header/div/div[1]/jim-drilldown-mega-menu/nav/ul/li[${counter}]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.278510" elapsed="0.078933"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Page Should Contain Link" owner="SeleniumLibrary">
+<msg time="2024-10-07T14:10:21.376009" level="INFO">Current page contains link 'https://www.jimms.fi/fi/Product/Oheislaitteet'.</msg>
+<arg>https://www.jimms.fi/fi/Product/${tuotealue}</arg>
+<doc>Verifies link identified by ``locator`` is found from current page.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.357443" elapsed="0.018566"/>
+</kw>
+<arg>Page Should Contain Link</arg>
+<arg>https://www.jimms.fi/fi/Product/${tuotealue}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.357443" elapsed="0.018566"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-10-07T14:10:21.376009" level="INFO">${counter} = 4</msg>
+<var>${counter}</var>
+<arg>${counter + 1}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.376009" elapsed="0.000000"/>
+</kw>
+<var name="${tuotealue}">Oheislaitteet</var>
+<status status="PASS" start="2024-10-07T14:10:21.276509" elapsed="0.099500"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-07T14:10:21.376009" level="INFO">4</msg>
+<arg>${counter}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.376009" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-07T14:10:21.376009" level="INFO">Clicking element 'xpath=/html/body/header/div/div[1]/jim-drilldown-mega-menu/nav/ul/li[4]/a'.</msg>
+<arg>xpath=/html/body/header/div/div[1]/jim-drilldown-mega-menu/nav/ul/li[${counter}]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.376009" elapsed="0.051409"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Page Should Contain Link" owner="SeleniumLibrary">
+<msg time="2024-10-07T14:10:21.447873" level="INFO">Current page contains link 'https://www.jimms.fi/fi/Product/Pelaaminen'.</msg>
+<arg>https://www.jimms.fi/fi/Product/${tuotealue}</arg>
+<doc>Verifies link identified by ``locator`` is found from current page.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.428330" elapsed="0.021048"/>
+</kw>
+<arg>Page Should Contain Link</arg>
+<arg>https://www.jimms.fi/fi/Product/${tuotealue}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.428330" elapsed="0.021048"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-10-07T14:10:21.450860" level="INFO">${counter} = 5</msg>
+<var>${counter}</var>
+<arg>${counter + 1}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.449378" elapsed="0.001482"/>
+</kw>
+<var name="${tuotealue}">Pelaaminen</var>
+<status status="PASS" start="2024-10-07T14:10:21.376009" elapsed="0.074851"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-07T14:10:21.450860" level="INFO">5</msg>
+<arg>${counter}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.450860" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-07T14:10:21.450860" level="INFO">Clicking element 'xpath=/html/body/header/div/div[1]/jim-drilldown-mega-menu/nav/ul/li[5]/a'.</msg>
+<arg>xpath=/html/body/header/div/div[1]/jim-drilldown-mega-menu/nav/ul/li[${counter}]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.450860" elapsed="0.059357"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Page Should Contain Link" owner="SeleniumLibrary">
+<msg time="2024-10-07T14:10:21.575027" level="INFO">Current page contains link 'https://www.jimms.fi/fi/Product/SimRacing'.</msg>
+<arg>https://www.jimms.fi/fi/Product/${tuotealue}</arg>
+<doc>Verifies link identified by ``locator`` is found from current page.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.511848" elapsed="0.063179"/>
+</kw>
+<arg>Page Should Contain Link</arg>
+<arg>https://www.jimms.fi/fi/Product/${tuotealue}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.511223" elapsed="0.063804"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-10-07T14:10:21.575027" level="INFO">${counter} = 6</msg>
+<var>${counter}</var>
+<arg>${counter + 1}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.575027" elapsed="0.000000"/>
+</kw>
+<var name="${tuotealue}">SimRacing</var>
+<status status="PASS" start="2024-10-07T14:10:21.450860" elapsed="0.124167"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-07T14:10:21.575027" level="INFO">6</msg>
+<arg>${counter}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.575027" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-07T14:10:21.575027" level="INFO">Clicking element 'xpath=/html/body/header/div/div[1]/jim-drilldown-mega-menu/nav/ul/li[6]/a'.</msg>
+<arg>xpath=/html/body/header/div/div[1]/jim-drilldown-mega-menu/nav/ul/li[${counter}]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.575027" elapsed="0.060216"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Page Should Contain Link" owner="SeleniumLibrary">
+<msg time="2024-10-07T14:10:21.651778" level="INFO">Current page contains link 'https://www.jimms.fi/fi/Product/Verkkotuotteet'.</msg>
+<arg>https://www.jimms.fi/fi/Product/${tuotealue}</arg>
+<doc>Verifies link identified by ``locator`` is found from current page.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.636337" elapsed="0.015441"/>
+</kw>
+<arg>Page Should Contain Link</arg>
+<arg>https://www.jimms.fi/fi/Product/${tuotealue}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.635243" elapsed="0.016535"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-10-07T14:10:21.652801" level="INFO">${counter} = 7</msg>
+<var>${counter}</var>
+<arg>${counter + 1}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.651778" elapsed="0.001023"/>
+</kw>
+<var name="${tuotealue}">Verkkotuotteet</var>
+<status status="PASS" start="2024-10-07T14:10:21.575027" elapsed="0.077774"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-07T14:10:21.653793" level="INFO">7</msg>
+<arg>${counter}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.653793" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-07T14:10:21.654786" level="INFO">Clicking element 'xpath=/html/body/header/div/div[1]/jim-drilldown-mega-menu/nav/ul/li[7]/a'.</msg>
+<arg>xpath=/html/body/header/div/div[1]/jim-drilldown-mega-menu/nav/ul/li[${counter}]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.653793" elapsed="0.042389"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Page Should Contain Link" owner="SeleniumLibrary">
+<msg time="2024-10-07T14:10:21.715371" level="INFO">Current page contains link 'https://www.jimms.fi/fi/Product/Tarvikkeet'.</msg>
+<arg>https://www.jimms.fi/fi/Product/${tuotealue}</arg>
+<doc>Verifies link identified by ``locator`` is found from current page.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.696182" elapsed="0.019189"/>
+</kw>
+<arg>Page Should Contain Link</arg>
+<arg>https://www.jimms.fi/fi/Product/${tuotealue}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.696182" elapsed="0.019189"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-10-07T14:10:21.716452" level="INFO">${counter} = 8</msg>
+<var>${counter}</var>
+<arg>${counter + 1}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.716452" elapsed="0.000000"/>
+</kw>
+<var name="${tuotealue}">Tarvikkeet</var>
+<status status="PASS" start="2024-10-07T14:10:21.652801" elapsed="0.063651"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-07T14:10:21.717476" level="INFO">8</msg>
+<arg>${counter}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.717476" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-07T14:10:21.718422" level="INFO">Clicking element 'xpath=/html/body/header/div/div[1]/jim-drilldown-mega-menu/nav/ul/li[8]/a'.</msg>
+<arg>xpath=/html/body/header/div/div[1]/jim-drilldown-mega-menu/nav/ul/li[${counter}]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.717476" elapsed="0.056926"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Page Should Contain Link" owner="SeleniumLibrary">
+<msg time="2024-10-07T14:10:21.789282" level="INFO">Current page contains link 'https://www.jimms.fi/fi/Product/Erikoistuotteet'.</msg>
+<arg>https://www.jimms.fi/fi/Product/${tuotealue}</arg>
+<doc>Verifies link identified by ``locator`` is found from current page.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.775401" elapsed="0.014024"/>
+</kw>
+<arg>Page Should Contain Link</arg>
+<arg>https://www.jimms.fi/fi/Product/${tuotealue}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.774402" elapsed="0.015390"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-10-07T14:10:21.789792" level="INFO">${counter} = 9</msg>
+<var>${counter}</var>
+<arg>${counter + 1}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.789792" elapsed="0.000000"/>
+</kw>
+<var name="${tuotealue}">Erikoistuotteet</var>
+<status status="PASS" start="2024-10-07T14:10:21.717476" elapsed="0.072316"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-07T14:10:21.789792" level="INFO">9</msg>
+<arg>${counter}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.789792" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-07T14:10:21.789792" level="INFO">Clicking element 'xpath=/html/body/header/div/div[1]/jim-drilldown-mega-menu/nav/ul/li[9]/a'.</msg>
+<arg>xpath=/html/body/header/div/div[1]/jim-drilldown-mega-menu/nav/ul/li[${counter}]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.789792" elapsed="0.046694"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Page Should Contain Link" owner="SeleniumLibrary">
+<msg time="2024-10-07T14:10:21.855929" level="INFO">Current page contains link 'https://www.jimms.fi/fi/Product/Ohjelmistot'.</msg>
+<arg>https://www.jimms.fi/fi/Product/${tuotealue}</arg>
+<doc>Verifies link identified by ``locator`` is found from current page.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.837527" elapsed="0.018402"/>
+</kw>
+<arg>Page Should Contain Link</arg>
+<arg>https://www.jimms.fi/fi/Product/${tuotealue}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.836486" elapsed="0.019443"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-10-07T14:10:21.856937" level="INFO">${counter} = 10</msg>
+<var>${counter}</var>
+<arg>${counter + 1}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.856937" elapsed="0.000000"/>
+</kw>
+<var name="${tuotealue}">Ohjelmistot</var>
+<status status="PASS" start="2024-10-07T14:10:21.789792" elapsed="0.068149"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-07T14:10:21.857941" level="INFO">10</msg>
+<arg>${counter}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.857941" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-07T14:10:21.858975" level="INFO">Clicking element 'xpath=/html/body/header/div/div[1]/jim-drilldown-mega-menu/nav/ul/li[10]/a'.</msg>
+<arg>xpath=/html/body/header/div/div[1]/jim-drilldown-mega-menu/nav/ul/li[${counter}]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.857941" elapsed="0.046408"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Page Should Contain Link" owner="SeleniumLibrary">
+<msg time="2024-10-07T14:10:21.918494" level="INFO">Current page contains link 'https://www.jimms.fi/fi/Product/Palvelut'.</msg>
+<arg>https://www.jimms.fi/fi/Product/${tuotealue}</arg>
+<doc>Verifies link identified by ``locator`` is found from current page.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.904349" elapsed="0.014145"/>
+</kw>
+<arg>Page Should Contain Link</arg>
+<arg>https://www.jimms.fi/fi/Product/${tuotealue}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.904349" elapsed="0.014145"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-10-07T14:10:21.918494" level="INFO">${counter} = 11</msg>
+<var>${counter}</var>
+<arg>${counter + 1}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.918494" elapsed="0.000000"/>
+</kw>
+<var name="${tuotealue}">Palvelut</var>
+<status status="PASS" start="2024-10-07T14:10:21.857941" elapsed="0.060553"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-07T14:10:21.918494" level="INFO">11</msg>
+<arg>${counter}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.918494" elapsed="0.002757"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-07T14:10:21.921416" level="INFO">Clicking element 'xpath=/html/body/header/div/div[1]/jim-drilldown-mega-menu/nav/ul/li[11]/a'.</msg>
+<arg>xpath=/html/body/header/div/div[1]/jim-drilldown-mega-menu/nav/ul/li[${counter}]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-07T14:10:21.921416" elapsed="0.044557"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Page Should Contain Link" owner="SeleniumLibrary">
+<msg time="2024-10-07T14:10:22.201090" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../Screenshots/selenium-screenshot-12.png"&gt;&lt;img src="../Screenshots/selenium-screenshot-12.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-10-07T14:10:22.201090" level="FAIL">Page should have contained link 'https://www.jimms.fi/fi/Product/Kampanjat' but did not.</msg>
+<arg>https://www.jimms.fi/fi/Product/${tuotealue}</arg>
+<doc>Verifies link identified by ``locator`` is found from current page.</doc>
+<status status="FAIL" start="2024-10-07T14:10:21.965973" elapsed="0.241921">Page should have contained link 'https://www.jimms.fi/fi/Product/Kampanjat' but did not.</status>
+</kw>
+<arg>Page Should Contain Link</arg>
+<arg>https://www.jimms.fi/fi/Product/${tuotealue}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="FAIL" start="2024-10-07T14:10:21.965973" elapsed="0.241921">Page should have contained link 'https://www.jimms.fi/fi/Product/Kampanjat' but did not.</status>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-10-07T14:10:22.209534" level="INFO">${counter} = 12</msg>
+<var>${counter}</var>
+<arg>${counter + 1}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-10-07T14:10:22.208824" elapsed="0.000710"/>
+</kw>
+<var name="${tuotealue}">Kampanjat</var>
+<status status="FAIL" start="2024-10-07T14:10:21.918494" elapsed="0.291040">Page should have contained link 'https://www.jimms.fi/fi/Product/Kampanjat' but did not.</status>
+</iter>
+<var>${tuotealue}</var>
+<value>@{tuotealueet}</value>
+<status status="FAIL" start="2024-10-07T14:10:21.004735" elapsed="1.204799">Page should have contained link 'https://www.jimms.fi/fi/Product/Kampanjat' but did not.</status>
+</for>
+<status status="FAIL" start="2024-10-07T14:10:18.499995" elapsed="3.710560">Page should have contained link 'https://www.jimms.fi/fi/Product/Kampanjat' but did not.</status>
 </test>
-<status status="PASS" start="2024-10-07T09:55:07.500492" elapsed="4.825408"/>
+<status status="FAIL" start="2024-10-07T14:10:18.357889" elapsed="3.853664"/>
 </suite>
-<status status="PASS" start="2024-10-07T09:55:07.498463" elapsed="4.833477"/>
+<status status="FAIL" start="2024-10-07T14:10:18.355884" elapsed="3.857002"/>
 </suite>
-<status status="PASS" start="2024-10-07T09:55:07.475196" elapsed="4.856744"/>
+<status status="FAIL" start="2024-10-07T14:10:18.330219" elapsed="3.885674"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="1" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Python-Ninjas-Projectworks">Python-Ninjas-Projectworks</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1" name="RobotFiles">Python-Ninjas-Projectworks.RobotFiles</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Joni">Python-Ninjas-Projectworks.RobotFiles.Joni</stat>
+<stat pass="1" fail="1" skip="0" id="s1" name="Python-Ninjas-Projectworks">Python-Ninjas-Projectworks</stat>
+<stat pass="1" fail="1" skip="0" id="s1-s1" name="RobotFiles">Python-Ninjas-Projectworks.RobotFiles</stat>
+<stat pass="1" fail="1" skip="0" id="s1-s1-s1" name="Joni">Python-Ninjas-Projectworks.RobotFiles.Joni</stat>
 </suite>
 </statistics>
 <errors>
