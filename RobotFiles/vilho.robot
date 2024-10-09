@@ -2,6 +2,7 @@
 #  3. Löytyykö tuotesivulta (ps5, ensimmäinen tuote joka ilmestyy) linkki "Lisää koriin"
 #  4. Löytyykö "Lisää koriin" -linkkiin liittyvä ikoni. Robotti ottaa ikonista kuvankaappauksen.
 #  5. Robotti lisää tuotteen ostoskoriin
+#  Extra. poistaa ostoskorista tuotteen
 
 *** Settings ***
 Library   SeleniumLibrary

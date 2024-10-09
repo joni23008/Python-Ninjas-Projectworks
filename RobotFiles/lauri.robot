@@ -3,6 +3,8 @@
     #- robotti ottaa kuvankaappauksen ensimmäisestä tuotteesta
     #- robotti menee tuotteen tuotesivulle
     #- robotti tarkastaa, että on oikealla tuotesivulla ja haku täsmää joltain osin annettuun hakusanaan
+# Extra. kirjaudu ja tarkastele ostoshistoriaa
+# Extra. Haun "ps5" järjestäminen vaikka hinnan mukaan. ota kuva halvimmasta tuotteesta.
 
 *** Settings ***
 Library   SeleniumLibrary

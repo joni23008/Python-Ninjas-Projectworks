@@ -1,5 +1,9 @@
 # Testattava tuote: http://jimms.fi
 # 1. Onko kaikilla tuotealueilla "landing page"
+# Extra. landing pagelta pääsee main menuun ja toisiin linkkeihin.
+# Extra. yhteystiedot sivulla, löytyykö yhteystiedot.
+
+
 
 
 *** Settings ***
