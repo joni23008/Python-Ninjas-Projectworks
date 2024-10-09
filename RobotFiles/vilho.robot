@@ -56,9 +56,13 @@ ${hakusana}    ps5
     Click Element    xpath://a[@title="Lisää koriin"]
     Sleep    1s
 
-6. Poista tuote ostoskorin "dropdown" -valikosta, klikkaa ostoskori auki ja tarkista löytyyko tuotetta
+6. Poista tuote ostoskorin "dropdown" -valikosta, klikkaa ostoskori auki ja varmista että ostoskori on tyhjä
     
     Mouse Over    xpath:/html/body/header/div/div[3]/jim-cart-dropdown/div/a
     Wait Until Element Is Visible    xpath:/html/body/header/div/div[3]/jim-cart-dropdown/div/div/div
 
     Click Element    xpath:/html/body/header/div/div[3]/jim-cart-dropdown/div/div/div/div[1]/article/div[2]/div[2]/div/span[1]
+    Sleep    1s
+
+    Click Element    xpath:/html/body/header/div/div[3]/jim-cart-dropdown/div/a
+    Page Should Contain    Ostoskorisi on tyhjä
