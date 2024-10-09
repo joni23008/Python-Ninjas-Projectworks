@@ -1,95 +1,477 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.12.6 on win32)" generated="2024-10-07T12:34:39.194556" rpa="false" schemaversion="5">
-<suite id="s1" name="Lauri" source="c:\Users\latel\Documents\GitHub\Python-Ninjas-Projectworks\RobotFiles\lauri.robot">
+<robot generator="Robot 7.0.1 (Python 3.11.5 on win32)" generated="2024-10-09T10:08:41.798650" rpa="false" schemaversion="5">
+<suite id="s1" name="Joni" source="c:\Users\jonim\Documents\GitHub\Python-Ninjas-Projectworks\RobotFiles\joni.robot">
 <test id="s1-t1" name="0: Asetetaan screenshot-kansio" line="16">
 <kw name="Set Screenshot Directory" owner="SeleniumLibrary">
-<arg>C:\\Users\\latel\\Documents\\GitHub\\Python-Ninjas-Projectworks\\Screenshots</arg>
+<arg>C:\\Users\\jonim\\Documents\\GitHub\\Python-Ninjas-Projectworks\\Screenshots</arg>
 <doc>Sets the directory for captured screenshots.</doc>
-<status status="PASS" start="2024-10-07T12:34:39.380564" elapsed="0.001001"/>
+<status status="PASS" start="2024-10-09T10:08:42.024357" elapsed="0.001094"/>
 </kw>
-<status status="PASS" start="2024-10-07T12:34:39.379566" elapsed="0.001999"/>
+<status status="PASS" start="2024-10-09T10:08:42.019508" elapsed="0.006489"/>
 </test>
-<test id="s1-t2" name="2. Testaa hakutoimintoa tuotteen pääsivulta (hakusana ps5)" line="18">
+<test id="s1-t2" name="1: Onko kaikilla tuotealueilla &quot;landing page&quot;" line="19">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-10-07T12:34:39.383564" level="INFO">Opening browser 'Chrome' to base url 'http://jimms.fi'.</msg>
+<msg time="2024-10-09T10:08:42.028085" level="INFO">Opening browser 'Chrome' to base url 'http://jimms.fi'.</msg>
 <arg>${url}</arg>
 <arg>Chrome</arg>
 <arg>options=add_argument("disable-search-engine-choice-screen"); add_experimental_option("detach", True)</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-10-07T12:34:39.383564" elapsed="2.216783"/>
+<status status="PASS" start="2024-10-09T10:08:42.027561" elapsed="2.389596"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-10-07T12:34:41.601357" elapsed="0.155305"/>
+<status status="PASS" start="2024-10-09T10:08:44.417157" elapsed="0.210286"/>
 </kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-10-07T12:34:41.758537" level="INFO">Clicking element 'name:q'.</msg>
-<arg>name:q</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-07T12:34:41.757884" elapsed="0.123741"/>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2024-10-09T10:08:44.708553" level="INFO">${count} = 11</msg>
+<var>${count}</var>
+<arg>xpath:/html/body/header/div/div[1]/jim-drilldown-mega-menu/nav/ul/li[*]/a</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2024-10-09T10:08:44.627443" elapsed="0.081110"/>
 </kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-10-07T12:34:41.883636" level="INFO">Typing text 'ps5' into text field 'name:q'.</msg>
-<arg>name:q</arg>
-<arg>ps5</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-07T12:34:41.882626" elapsed="0.053274"/>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-09T10:08:44.709561" level="INFO">11</msg>
+<arg>${count}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-09T10:08:44.709561" elapsed="0.001007"/>
 </kw>
-<kw name="Press Keys" owner="SeleniumLibrary">
-<msg time="2024-10-07T12:34:41.936937" level="INFO">Sending key(s) ('ENTER',) to name:q element.</msg>
-<msg time="2024-10-07T12:34:42.222809" level="INFO">Pressing special key ENTER to element.</msg>
-<msg time="2024-10-07T12:34:42.222809" level="INFO">Releasing special key ENTER.</msg>
-<arg>name:q</arg>
-<arg>ENTER</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="PASS" start="2024-10-07T12:34:41.936937" elapsed="0.356651"/>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T10:08:44.826815" level="INFO">${tuotealueet2} = Tietokoneet</msg>
+<var>${tuotealueet2}</var>
+<arg>xpath=/html/body/header/div/div[1]/jim-drilldown-mega-menu/nav/ul/li[${counter}]/a</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T10:08:44.711560" elapsed="0.115255"/>
 </kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-10-07T12:34:44.295457" level="INFO">Slept 2 seconds.</msg>
-<arg>2</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-10-07T12:34:42.294587" elapsed="2.000870"/>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-09T10:08:44.827818" level="INFO">Tietokoneet</msg>
+<arg>${tuotealueet2}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-09T10:08:44.827818" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2024-10-07T12:34:39.382565" elapsed="4.914956"/>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${tuotealueet2}' == 'Sim Racing'</arg>
+<arg>Set Global Variable</arg>
+<arg>${tuotealueet2}</arg>
+<arg>SimRacing</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-09T10:08:44.827818" elapsed="0.001008"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Page Should Contain Link" owner="SeleniumLibrary">
+<msg time="2024-10-09T10:08:44.854839" level="INFO">Current page contains link 'https://www.jimms.fi/fi/Product/Tietokoneet'.</msg>
+<arg>https://www.jimms.fi/fi/Product/${tuotealueet2}</arg>
+<doc>Verifies link identified by ``locator`` is found from current page.</doc>
+<status status="PASS" start="2024-10-09T10:08:44.828826" elapsed="0.026013"/>
+</kw>
+<arg>Page Should Contain Link</arg>
+<arg>https://www.jimms.fi/fi/Product/${tuotealueet2}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-10-09T10:08:44.828826" elapsed="0.026013"/>
+</kw>
+<var name="${counter}">1</var>
+<status status="PASS" start="2024-10-09T10:08:44.711560" elapsed="0.143279"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T10:08:44.866899" level="INFO">${tuotealueet2} = Komponentit</msg>
+<var>${tuotealueet2}</var>
+<arg>xpath=/html/body/header/div/div[1]/jim-drilldown-mega-menu/nav/ul/li[${counter}]/a</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T10:08:44.854839" elapsed="0.012060"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-09T10:08:44.873389" level="INFO">Komponentit</msg>
+<arg>${tuotealueet2}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-09T10:08:44.873389" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${tuotealueet2}' == 'Sim Racing'</arg>
+<arg>Set Global Variable</arg>
+<arg>${tuotealueet2}</arg>
+<arg>SimRacing</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-09T10:08:44.873389" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Page Should Contain Link" owner="SeleniumLibrary">
+<msg time="2024-10-09T10:08:44.892483" level="INFO">Current page contains link 'https://www.jimms.fi/fi/Product/Komponentit'.</msg>
+<arg>https://www.jimms.fi/fi/Product/${tuotealueet2}</arg>
+<doc>Verifies link identified by ``locator`` is found from current page.</doc>
+<status status="PASS" start="2024-10-09T10:08:44.874403" elapsed="0.018080"/>
+</kw>
+<arg>Page Should Contain Link</arg>
+<arg>https://www.jimms.fi/fi/Product/${tuotealueet2}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-10-09T10:08:44.874403" elapsed="0.018080"/>
+</kw>
+<var name="${counter}">2</var>
+<status status="PASS" start="2024-10-09T10:08:44.854839" elapsed="0.037644"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T10:08:44.925013" level="INFO">${tuotealueet2} = Oheislaitteet</msg>
+<var>${tuotealueet2}</var>
+<arg>xpath=/html/body/header/div/div[1]/jim-drilldown-mega-menu/nav/ul/li[${counter}]/a</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T10:08:44.893536" elapsed="0.031477"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-09T10:08:44.925013" level="INFO">Oheislaitteet</msg>
+<arg>${tuotealueet2}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-09T10:08:44.925013" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${tuotealueet2}' == 'Sim Racing'</arg>
+<arg>Set Global Variable</arg>
+<arg>${tuotealueet2}</arg>
+<arg>SimRacing</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-09T10:08:44.925013" elapsed="0.000998"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Page Should Contain Link" owner="SeleniumLibrary">
+<msg time="2024-10-09T10:08:44.940115" level="INFO">Current page contains link 'https://www.jimms.fi/fi/Product/Oheislaitteet'.</msg>
+<arg>https://www.jimms.fi/fi/Product/${tuotealueet2}</arg>
+<doc>Verifies link identified by ``locator`` is found from current page.</doc>
+<status status="PASS" start="2024-10-09T10:08:44.926011" elapsed="0.014104"/>
+</kw>
+<arg>Page Should Contain Link</arg>
+<arg>https://www.jimms.fi/fi/Product/${tuotealueet2}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-10-09T10:08:44.926011" elapsed="0.015112"/>
+</kw>
+<var name="${counter}">3</var>
+<status status="PASS" start="2024-10-09T10:08:44.893536" elapsed="0.047587"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T10:08:44.963002" level="INFO">${tuotealueet2} = Pelaaminen</msg>
+<var>${tuotealueet2}</var>
+<arg>xpath=/html/body/header/div/div[1]/jim-drilldown-mega-menu/nav/ul/li[${counter}]/a</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T10:08:44.941123" elapsed="0.021879"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-09T10:08:44.963685" level="INFO">Pelaaminen</msg>
+<arg>${tuotealueet2}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-09T10:08:44.963002" elapsed="0.000683"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${tuotealueet2}' == 'Sim Racing'</arg>
+<arg>Set Global Variable</arg>
+<arg>${tuotealueet2}</arg>
+<arg>SimRacing</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-09T10:08:44.964803" elapsed="0.000478"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Page Should Contain Link" owner="SeleniumLibrary">
+<msg time="2024-10-09T10:08:44.992560" level="INFO">Current page contains link 'https://www.jimms.fi/fi/Product/Pelaaminen'.</msg>
+<arg>https://www.jimms.fi/fi/Product/${tuotealueet2}</arg>
+<doc>Verifies link identified by ``locator`` is found from current page.</doc>
+<status status="PASS" start="2024-10-09T10:08:44.966309" elapsed="0.027254"/>
+</kw>
+<arg>Page Should Contain Link</arg>
+<arg>https://www.jimms.fi/fi/Product/${tuotealueet2}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-10-09T10:08:44.965281" elapsed="0.028282"/>
+</kw>
+<var name="${counter}">4</var>
+<status status="PASS" start="2024-10-09T10:08:44.941123" elapsed="0.053447"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T10:08:45.027422" level="INFO">${tuotealueet2} = Sim Racing</msg>
+<var>${tuotealueet2}</var>
+<arg>xpath=/html/body/header/div/div[1]/jim-drilldown-mega-menu/nav/ul/li[${counter}]/a</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T10:08:44.995572" elapsed="0.031850"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-09T10:08:45.028432" level="INFO">Sim Racing</msg>
+<arg>${tuotealueet2}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-09T10:08:45.028432" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-10-09T10:08:45.028432" level="INFO">${tuotealueet2} = SimRacing</msg>
+<arg>${tuotealueet2}</arg>
+<arg>SimRacing</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-10-09T10:08:45.028432" elapsed="0.000995"/>
+</kw>
+<arg>'${tuotealueet2}' == 'Sim Racing'</arg>
+<arg>Set Global Variable</arg>
+<arg>${tuotealueet2}</arg>
+<arg>SimRacing</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-09T10:08:45.028432" elapsed="0.000995"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Page Should Contain Link" owner="SeleniumLibrary">
+<msg time="2024-10-09T10:08:45.059157" level="INFO">Current page contains link 'https://www.jimms.fi/fi/Product/SimRacing'.</msg>
+<arg>https://www.jimms.fi/fi/Product/${tuotealueet2}</arg>
+<doc>Verifies link identified by ``locator`` is found from current page.</doc>
+<status status="PASS" start="2024-10-09T10:08:45.029427" elapsed="0.029730"/>
+</kw>
+<arg>Page Should Contain Link</arg>
+<arg>https://www.jimms.fi/fi/Product/${tuotealueet2}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-10-09T10:08:45.029427" elapsed="0.029730"/>
+</kw>
+<var name="${counter}">5</var>
+<status status="PASS" start="2024-10-09T10:08:44.994570" elapsed="0.064587"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T10:08:45.087269" level="INFO">${tuotealueet2} = Verkkotuotteet</msg>
+<var>${tuotealueet2}</var>
+<arg>xpath=/html/body/header/div/div[1]/jim-drilldown-mega-menu/nav/ul/li[${counter}]/a</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T10:08:45.059157" elapsed="0.029153"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-09T10:08:45.088635" level="INFO">Verkkotuotteet</msg>
+<arg>${tuotealueet2}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-09T10:08:45.088310" elapsed="0.000325"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${tuotealueet2}' == 'Sim Racing'</arg>
+<arg>Set Global Variable</arg>
+<arg>${tuotealueet2}</arg>
+<arg>SimRacing</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-09T10:08:45.088635" elapsed="0.001005"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Page Should Contain Link" owner="SeleniumLibrary">
+<msg time="2024-10-09T10:08:45.110478" level="INFO">Current page contains link 'https://www.jimms.fi/fi/Product/Verkkotuotteet'.</msg>
+<arg>https://www.jimms.fi/fi/Product/${tuotealueet2}</arg>
+<doc>Verifies link identified by ``locator`` is found from current page.</doc>
+<status status="PASS" start="2024-10-09T10:08:45.089640" elapsed="0.020838"/>
+</kw>
+<arg>Page Should Contain Link</arg>
+<arg>https://www.jimms.fi/fi/Product/${tuotealueet2}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-10-09T10:08:45.089640" elapsed="0.020838"/>
+</kw>
+<var name="${counter}">6</var>
+<status status="PASS" start="2024-10-09T10:08:45.059157" elapsed="0.052312"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T10:08:45.126154" level="INFO">${tuotealueet2} = Tarvikkeet</msg>
+<var>${tuotealueet2}</var>
+<arg>xpath=/html/body/header/div/div[1]/jim-drilldown-mega-menu/nav/ul/li[${counter}]/a</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T10:08:45.111469" elapsed="0.014685"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-09T10:08:45.127164" level="INFO">Tarvikkeet</msg>
+<arg>${tuotealueet2}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-09T10:08:45.126154" elapsed="0.001010"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${tuotealueet2}' == 'Sim Racing'</arg>
+<arg>Set Global Variable</arg>
+<arg>${tuotealueet2}</arg>
+<arg>SimRacing</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-09T10:08:45.127164" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Page Should Contain Link" owner="SeleniumLibrary">
+<msg time="2024-10-09T10:08:45.141273" level="INFO">Current page contains link 'https://www.jimms.fi/fi/Product/Tarvikkeet'.</msg>
+<arg>https://www.jimms.fi/fi/Product/${tuotealueet2}</arg>
+<doc>Verifies link identified by ``locator`` is found from current page.</doc>
+<status status="PASS" start="2024-10-09T10:08:45.127164" elapsed="0.014109"/>
+</kw>
+<arg>Page Should Contain Link</arg>
+<arg>https://www.jimms.fi/fi/Product/${tuotealueet2}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-10-09T10:08:45.127164" elapsed="0.014109"/>
+</kw>
+<var name="${counter}">7</var>
+<status status="PASS" start="2024-10-09T10:08:45.111469" elapsed="0.029804"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T10:08:45.151798" level="INFO">${tuotealueet2} = Erikoistuotteet</msg>
+<var>${tuotealueet2}</var>
+<arg>xpath=/html/body/header/div/div[1]/jim-drilldown-mega-menu/nav/ul/li[${counter}]/a</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T10:08:45.141273" elapsed="0.010525"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-09T10:08:45.151798" level="INFO">Erikoistuotteet</msg>
+<arg>${tuotealueet2}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-09T10:08:45.151798" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${tuotealueet2}' == 'Sim Racing'</arg>
+<arg>Set Global Variable</arg>
+<arg>${tuotealueet2}</arg>
+<arg>SimRacing</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-09T10:08:45.151798" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Page Should Contain Link" owner="SeleniumLibrary">
+<msg time="2024-10-09T10:08:45.169673" level="INFO">Current page contains link 'https://www.jimms.fi/fi/Product/Erikoistuotteet'.</msg>
+<arg>https://www.jimms.fi/fi/Product/${tuotealueet2}</arg>
+<doc>Verifies link identified by ``locator`` is found from current page.</doc>
+<status status="PASS" start="2024-10-09T10:08:45.151798" elapsed="0.017875"/>
+</kw>
+<arg>Page Should Contain Link</arg>
+<arg>https://www.jimms.fi/fi/Product/${tuotealueet2}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-10-09T10:08:45.151798" elapsed="0.017875"/>
+</kw>
+<var name="${counter}">8</var>
+<status status="PASS" start="2024-10-09T10:08:45.141273" elapsed="0.028400"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T10:08:45.182201" level="INFO">${tuotealueet2} = Ohjelmistot</msg>
+<var>${tuotealueet2}</var>
+<arg>xpath=/html/body/header/div/div[1]/jim-drilldown-mega-menu/nav/ul/li[${counter}]/a</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T10:08:45.169673" elapsed="0.012528"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-09T10:08:45.182201" level="INFO">Ohjelmistot</msg>
+<arg>${tuotealueet2}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-09T10:08:45.182201" elapsed="0.003720"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${tuotealueet2}' == 'Sim Racing'</arg>
+<arg>Set Global Variable</arg>
+<arg>${tuotealueet2}</arg>
+<arg>SimRacing</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-09T10:08:45.186004" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Page Should Contain Link" owner="SeleniumLibrary">
+<msg time="2024-10-09T10:08:45.199524" level="INFO">Current page contains link 'https://www.jimms.fi/fi/Product/Ohjelmistot'.</msg>
+<arg>https://www.jimms.fi/fi/Product/${tuotealueet2}</arg>
+<doc>Verifies link identified by ``locator`` is found from current page.</doc>
+<status status="PASS" start="2024-10-09T10:08:45.186475" elapsed="0.013192"/>
+</kw>
+<arg>Page Should Contain Link</arg>
+<arg>https://www.jimms.fi/fi/Product/${tuotealueet2}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-10-09T10:08:45.186004" elapsed="0.013814"/>
+</kw>
+<var name="${counter}">9</var>
+<status status="PASS" start="2024-10-09T10:08:45.169673" elapsed="0.030303"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T10:08:45.212685" level="INFO">${tuotealueet2} = Palvelut</msg>
+<var>${tuotealueet2}</var>
+<arg>xpath=/html/body/header/div/div[1]/jim-drilldown-mega-menu/nav/ul/li[${counter}]/a</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T10:08:45.200567" elapsed="0.012118"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-09T10:08:45.213737" level="INFO">Palvelut</msg>
+<arg>${tuotealueet2}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-09T10:08:45.213687" elapsed="0.000050"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${tuotealueet2}' == 'Sim Racing'</arg>
+<arg>Set Global Variable</arg>
+<arg>${tuotealueet2}</arg>
+<arg>SimRacing</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-09T10:08:45.213737" elapsed="0.000479"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Page Should Contain Link" owner="SeleniumLibrary">
+<msg time="2024-10-09T10:08:45.226622" level="INFO">Current page contains link 'https://www.jimms.fi/fi/Product/Palvelut'.</msg>
+<arg>https://www.jimms.fi/fi/Product/${tuotealueet2}</arg>
+<doc>Verifies link identified by ``locator`` is found from current page.</doc>
+<status status="PASS" start="2024-10-09T10:08:45.214216" elapsed="0.012406"/>
+</kw>
+<arg>Page Should Contain Link</arg>
+<arg>https://www.jimms.fi/fi/Product/${tuotealueet2}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-10-09T10:08:45.214216" elapsed="0.012406"/>
+</kw>
+<var name="${counter}">10</var>
+<status status="PASS" start="2024-10-09T10:08:45.199976" elapsed="0.026646"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T10:08:45.235162" level="INFO">${tuotealueet2} = Kampanjat</msg>
+<var>${tuotealueet2}</var>
+<arg>xpath=/html/body/header/div/div[1]/jim-drilldown-mega-menu/nav/ul/li[${counter}]/a</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T10:08:45.227493" elapsed="0.007669"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-09T10:08:45.235162" level="INFO">Kampanjat</msg>
+<arg>${tuotealueet2}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-09T10:08:45.235162" elapsed="0.006234"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${tuotealueet2}' == 'Sim Racing'</arg>
+<arg>Set Global Variable</arg>
+<arg>${tuotealueet2}</arg>
+<arg>SimRacing</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-09T10:08:45.241396" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Page Should Contain Link" owner="SeleniumLibrary">
+<msg time="2024-10-09T10:08:45.457607" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/selenium-screenshot-5.png"&gt;&lt;img src="Screenshots/selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-10-09T10:08:45.457607" level="FAIL">Page should have contained link 'https://www.jimms.fi/fi/Product/Kampanjat' but did not.</msg>
+<arg>https://www.jimms.fi/fi/Product/${tuotealueet2}</arg>
+<doc>Verifies link identified by ``locator`` is found from current page.</doc>
+<status status="FAIL" start="2024-10-09T10:08:45.241396" elapsed="0.218214">Page should have contained link 'https://www.jimms.fi/fi/Product/Kampanjat' but did not.</status>
+</kw>
+<arg>Page Should Contain Link</arg>
+<arg>https://www.jimms.fi/fi/Product/${tuotealueet2}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="FAIL" start="2024-10-09T10:08:45.241396" elapsed="0.218214">Page should have contained link 'https://www.jimms.fi/fi/Product/Kampanjat' but did not.</status>
+</kw>
+<var name="${counter}">11</var>
+<status status="FAIL" start="2024-10-09T10:08:45.226622" elapsed="0.232988">Page should have contained link 'https://www.jimms.fi/fi/Product/Kampanjat' but did not.</status>
+</iter>
+<var>${counter}</var>
+<value>1</value>
+<value>${count}+1</value>
+<status status="FAIL" start="2024-10-09T10:08:44.710568" elapsed="0.749042">Page should have contained link 'https://www.jimms.fi/fi/Product/Kampanjat' but did not.</status>
+</for>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-10-09T10:08:45.459610" elapsed="2.178226"/>
+</kw>
+<status status="FAIL" start="2024-10-09T10:08:42.027043" elapsed="5.611820">Page should have contained link 'https://www.jimms.fi/fi/Product/Kampanjat' but did not.</status>
 </test>
-<test id="s1-t3" name="Kuvankaappaus ensimmäisestä tuotteesta" line="40">
-<kw name="Capture Element Screenshot" owner="SeleniumLibrary">
-<msg time="2024-10-07T12:34:44.390133" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/Ensimm%C3%A4inen_tuote.png"&gt;&lt;img src="Screenshots/Ensimm%C3%A4inen_tuote.png" width="400px"&gt;&lt;/a&gt;</msg>
-<arg>xpath:/html/body/main/div[2]/div/div[2]/div[5]/div/div[1]/product-box/div[2]/div[1]/a/div/img</arg>
-<arg>Ensimmäinen_tuote.png</arg>
-<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
-<status status="PASS" start="2024-10-07T12:34:44.301479" elapsed="0.088654"/>
-</kw>
-<status status="PASS" start="2024-10-07T12:34:44.300472" elapsed="0.089661"/>
-</test>
-<test id="s1-t4" name="Menee tuotteen tuotesivulle" line="43">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-10-07T12:34:44.392134" level="INFO">Clicking element 'xpath:/html/body/main/div[2]/div/div[2]/div[5]/div/div[1]/product-box/div[2]/div[2]/h5/a/span'.</msg>
-<arg>xpath:/html/body/main/div[2]/div/div[2]/div[5]/div/div[1]/product-box/div[2]/div[2]/h5/a/span</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-07T12:34:44.391134" elapsed="0.519928"/>
-</kw>
-<status status="PASS" start="2024-10-07T12:34:44.391134" elapsed="0.520927"/>
-</test>
-<test id="s1-t5" name="robotti tarkastaa, että on oikealla tuotesivulla ja haku täsmää joltain osin annettuun hakusanaan" line="46">
-<kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2024-10-07T12:34:44.963602" level="INFO">Current page contains text 'PS5'.</msg>
-<arg>${hakusana}</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2024-10-07T12:34:44.913061" elapsed="0.051557"/>
-</kw>
-<status status="PASS" start="2024-10-07T12:34:44.912061" elapsed="0.053538"/>
-</test>
-<status status="PASS" start="2024-10-07T12:34:39.198541" elapsed="5.768059"/>
+<status status="FAIL" start="2024-10-09T10:08:41.802970" elapsed="5.837873"/>
 </suite>
 <statistics>
 <total>
-<stat pass="5" fail="0" skip="0">All Tests</stat>
+<stat pass="1" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="5" fail="0" skip="0" id="s1" name="Lauri">Lauri</stat>
+<stat pass="1" fail="1" skip="0" id="s1" name="Joni">Joni</stat>
 </suite>
 </statistics>
 <errors>

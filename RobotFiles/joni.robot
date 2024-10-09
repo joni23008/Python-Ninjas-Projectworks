@@ -5,12 +5,12 @@
 *** Settings ***
 Library   SeleniumLibrary
 Library    String
+Library    OperatingSystem
 
 *** Variables ***
 ${url}    http://jimms.fi
 ${hakusana}    ps5
-@{tuotealueet}=    Tietokoneet    Komponentit    Oheislaitteet    Pelaaminen    SimRacing      Verkkotuotteet    Tarvikkeet    Erikoistuotteet    Ohjelmistot    Palvelut    Kampanjat
-
+@{tuotealueet}
 *** Test Cases ***
 0: Asetetaan screenshot-kansio
     Set Screenshot Directory    C:\\Users\\jonim\\Documents\\GitHub\\Python-Ninjas-Projectworks\\Screenshots
@@ -34,14 +34,21 @@ ${hakusana}    ps5
     Maximize Browser Window
 
     # selvitetään indexi, montako tuotealuetta
-    ${count}=    Get Element Count    xpath:/html/body/header/div/div[1]/jim-drilldown-mega-menu/nav/ul/li[*]/a
+    ${count}=    Get Element Count    xpath:/html/body/header/div/div[1]/jim-drilldown-mega-menu/nav/ul/li[*]/a                         
     Log    ${count}
-    
-    # loopataan tuotealueet lista ja katsotaan onko linkki olemassa.
-    FOR    ${tuotealue}    IN    @{tuotealueet}
 
-        Run Keyword And Continue On Failure    Page Should Contain Link    https://www.jimms.fi/fi/Product/${tuotealue}
 
+
+    FOR    ${counter}    IN RANGE    1    ${count}+1
+        # käydään läpi navigointi palkki ja kategoriat, otetaan ne talteen muuttujiin 
+        ${tuotealueet}=    Get Text    xpath=/html/body/header/div/div[1]/jim-drilldown-mega-menu/nav/ul/li[${counter}]/a    
+        Log    ${tuotealueet}
+
+        # syystä että miten Jimms sivu on suunniteltu, jos tulee vastaan Sim Racing tehdään seuraavaa
+        Run Keyword If    '${tuotealueet}' == 'Sim Racing'    Set Global Variable   ${tuotealueet}    SimRacing
+
+        # lopuksi tarkistetaan onko vastaavalla kategorialla linkki ns. landing page. 
+        Run Keyword And Continue On Failure    Page Should Contain Link    https://www.jimms.fi/fi/Product/${tuotealueet}
     END
-
-    
+    # suljetaan browser 
+    Close Browser
