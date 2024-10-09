@@ -1,7 +1,8 @@
 #  Testattava tuote: http://jimms.fi
 #  3. Löytyykö tuotesivulta (ps5, ensimmäinen tuote joka ilmestyy) linkki "Lisää koriin"
 #  4. Löytyykö "Lisää koriin" -linkkiin liittyvä ikoni. Robotti ottaa ikonista kuvankaappauksen.
-#  5. Robotti lisää tuotteen ostoskoriin
+#  5. Robotti lisää tuotteen ostoskoriin.
+#  6. Robotti poistaa tuotteen ostoskorin "dropdown" -valikosta, avaa ostoskorin ja tarkistaa onko ostoskori tyhjä.
 
 *** Settings ***
 Library   SeleniumLibrary
@@ -58,11 +59,14 @@ ${hakusana}    ps5
 
 6. Poista tuote ostoskorin "dropdown" -valikosta, klikkaa ostoskori auki ja varmista että ostoskori on tyhjä
     
+    #  Hoveraa ostoskorin yläpuolella joka avaa "dropdown" -menun
     Mouse Over    xpath:/html/body/header/div/div[3]/jim-cart-dropdown/div/a
     Wait Until Element Is Visible    xpath:/html/body/header/div/div[3]/jim-cart-dropdown/div/div/div
-
+    
+    #  Klikkaa "poista korista" -painiketta
     Click Element    xpath:/html/body/header/div/div[3]/jim-cart-dropdown/div/div/div/div[1]/article/div[2]/div[2]/div/span[1]
     Sleep    1s
 
+    #  Avaa ostoskorin ja tarkistaa onko ostoskori tyhjä
     Click Element    xpath:/html/body/header/div/div[3]/jim-cart-dropdown/div/a
     Page Should Contain    Ostoskorisi on tyhjä
