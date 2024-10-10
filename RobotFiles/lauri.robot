@@ -13,6 +13,7 @@ Library    String
 *** Variables ***
 ${url}    http://jimms.fi
 ${hakusana}    ps5
+${Password}    P44sw0rd!
 #${expected_url}    https://www.jimms.fi/fi/Product/Show/199044/1000040194/sony-ps5-dualsense-midnight-black-langaton-peliohjain
 
 *** Test Cases ***
@@ -74,7 +75,7 @@ Kirjaudu verkkosivulle
     Input Text    name:UserName    lauri23008@student.hamk.fi
     
     Click Element    name:Password
-    Input Password    name:Password    P44sw0rd!
+    Input Password    name:Password    ${Password}
     
     Click Element    xpath:/html/body/main/div/div[2]/div[1]/div/div/div/form/div[4]/input
 
