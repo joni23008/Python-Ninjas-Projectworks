@@ -85,3 +85,4 @@ Katsele ostoshistoriaa
     Wait Until Element Is Visible    xpath:/html/body/header/div/div[3]/jim-customer-dropdown-nav/div/div/ul
     Click Element    xpath:/html/body/header/div/div[3]/jim-customer-dropdown-nav/div/div/ul/li[2]/a
     Page Should Contain Button    xpath:/html/body/main/div[2]/div/div/div[1]/button[1]
+    Capture Page Screenshot    ostoshistoria.png
