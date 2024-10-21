@@ -9,11 +9,11 @@
 *** Settings ***
 Library   SeleniumLibrary
 Library    String
+Library    OperatingSystem
 
 *** Variables ***
 ${url}    http://jimms.fi
 ${hakusana}    ps5
-${Password}    P44sw0rd!
 #${expected_url}    https://www.jimms.fi/fi/Product/Show/199044/1000040194/sony-ps5-dualsense-midnight-black-langaton-peliohjain
 
 *** Test Cases ***
@@ -73,7 +73,7 @@ Kirjaudu verkkosivulle
     
     Click Element    name:UserName
     Input Text    name:UserName    lauri23008@student.hamk.fi
-    
+    ${Password}=    Get Environment Variable    PASSWORD
     Click Element    name:Password
     Input Password    name:Password    ${Password}
     
