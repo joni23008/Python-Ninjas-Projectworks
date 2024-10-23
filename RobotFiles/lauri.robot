@@ -61,6 +61,9 @@ Kirjaudu verkkosivulle
     
     Click Element    name:UserName
     Input Text    name:UserName    lauri23008@student.hamk.fi
+    # salasana sijaitsee koneessa environmental variables johon voi laittaa salasanan piiloon jotta salasana ei näy kovakoodattuna
+    # koodi pääsee käsiksi sinne komennolla 'Get Environment Variable' joka hakee keywordillä tässä tapauksessa 'PASSWORD'
+    # Keywordin PASSWORD takana on sitten kyseinen salasana joka syötetään haluttuun paikkaan joka määritelty koodissa
     ${Password}=    Get Environment Variable    PASSWORD
     Click Element    name:Password
     Input Password    name:Password    ${Password}
