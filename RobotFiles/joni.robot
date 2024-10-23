@@ -1,3 +1,5 @@
+# Joni Mitronen
+# ******************************************************************************************************************************************************
 # Testattava tuote: http://jimms.fi
 # 1. Onko kaikilla tuotealueilla "landing page".
 # 2. Jokaisen tuotealueen "landing pagelta" pääsee takaisin pääsivulle ja toisten tuotealueiden "landing pageille".
@@ -18,14 +20,14 @@ ${hakusana}    ps5
 
 1: Onko kaikilla tuotealueilla "landing page".
     # Test Case ID: 1
-    # Test Priority: High
+    # * Test Priority: High
     # Module Name: Product Landing Pages
-    # Test Designed By: Joni Mitronen 
-    # Test Designed Date: 07-10-2024
+    # * Test Designed By: Joni Mitronen 
+    # * Test Designed Date: 07-10-2024
     # Test Title: Onko kaikilla tuotealueilla "landing page".
     # Test Summary: Tarkistetaan, että jokaisella tuotealueella on toimiva "landing page", johon pääsee navigoimalla pääsivulta.
     # Pre-conditions: Verkkosivusto on saatavilla ja navigointipalkki on näkyvissä.
-    # Dependencies: SeleniumLibrary
+    # * Dependencies: SeleniumLibrary
     # Expected Result: Kaikilla tuotealueilla on toimiva linkki, joka ohjaa käyttäjän vastaavalle "landing page" -sivulle.
     
     # avataan browser
@@ -75,19 +77,19 @@ ${hakusana}    ps5
         Log    ${tuotealueet}
         # syystä että miten Jimms sivu on suunniteltu, jos tulee vastaan Sim Racing tehdään seuraavaa
         Run Keyword If    '${tuotealueet}' == 'Sim Racing'    Set Global Variable   ${tuotealueet}    SimRacing
-        # vaihtoehtoinen tapa navigoida suoraan linkkiin
+        # käydään läpi jokaisella sivulla kaikki linkit
         Run Keyword And Continue On Failure    Go To    https://www.jimms.fi/fi/Product/${tuotealueet}
         # nuku
         Sleep    0.5s
         # ota screenshot landing pagesta 
         Capture Page Screenshot    ${tuotealueet}.png
-        # käydään läpi jokaisella sivulla kaikki linkit
+        # käydään läpi jokaisella landing pagella kaikki linkit
         FOR    ${counter}    IN RANGE    1    ${count}+1
             # käydään läpi navigointi palkki ja kategoriat, otetaan ne talteen muuttujiin 
             ${tuotealueet}=    Get Text    xpath=/html/body/header/div/div[1]/jim-drilldown-mega-menu/nav/ul/li[${counter}]/a  
             # syystä että miten Jimms sivu on suunniteltu, jos tulee vastaan Sim Racing tehdään seuraavaa
             Run Keyword If    '${tuotealueet}' == 'Sim Racing'    Set Global Variable   ${tuotealueet}    SimRacing
-            # käydään läpi jokaisella sivulla kaikki linkit
+            # käydään läpi kaikki linkit
             Run Keyword And Continue On Failure    Go To    https://www.jimms.fi/fi/Product/${tuotealueet}
             # nuku
             Sleep    0.2s
@@ -100,7 +102,7 @@ ${hakusana}    ps5
 
 3. Yhteystiedot sivulta löytyy yhteystiedot (sähköposti ja puhelinnumero).
     # Test Case ID: 3
-    # Test Priority: Medium
+    # Test Priority: High
     # Module Name: Contact Information
     # Test Designed By: Joni Mitronen 
     # Test Designed Date: 07-10-2024
