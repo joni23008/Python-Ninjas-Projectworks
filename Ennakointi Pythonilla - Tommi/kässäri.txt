@@ -1,0 +1,11 @@
+Part 1  (Familiaring and basic testing of kNN algorithm)
+Find some other interesting dataset than the Iris dataset from Kaggle on which you can perform kNN classification
+Run kNN algorithm on that data
+Use the sklearn version
+List 2 interesting use cases for applying kNN algorithm for real world
+These may or may not be business cases
+
+Part 2 (Experimenting with the kNN algorithm more in detail)
+Make experiments on your algorithms with different values of k
+Study the effect of different training/testing split portions on your data (like 80/20 training/testing split)
+Try k-Fold approach
