@@ -1,9 +1,9 @@
 Part 1:
 Introductions
-- Moi mä oon Joni, Moi mä oon Vilho, Moi mä oon Lauri.
+- Joni Mitronen, Vilho Harjajärvi ja Lauri Santala.
 
 Find some other interesting dataset than the Iris dataset from Kaggle on which you can perform kNN classification
-- Me valitsimme Fake Bills ja Pokemon datasetin. Fake bills tarkastellaan saadaanko väärät setelit kiinni ja pokemonissa tarkastellaan onko hyökkäyspisteet enemmän kuin 100.
+- Me valitsimme Fake Bills-datasetin. Fake bills mallissa tarkastellaan saadaanko väärät setelit kiinni.
 
 Run kNN algorithm on that data
 - Näytä kohta jossa ajetaan kNN
