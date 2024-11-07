@@ -1,20 +1,31 @@
 Part 1:
 Introductions
 - Moi mä oon Joni, Moi mä oon Vilho, Moi mä oon Lauri.
+
 Find some other interesting dataset than the Iris dataset from Kaggle on which you can perform kNN classification
 - Me valitsimme Fake Bills ja Pokemon datasetin. Fake bills tarkastellaan saadaanko väärät setelit kiinni ja pokemonissa tarkastellaan onko hyökkäyspisteet enemmän kuin 100.
+
 Run kNN algorithm on that data
 - Näytä kohta jossa ajetaan kNN
+
 Use the sklearn version
 - Näytä et importataan sklearn
+
 List 2 interesting use cases for applying kNN algorithm for real world
-These may or may not be business cases
-- 
+- Urheiluanalytiikka
+kNN-algoritmi voi analysoida urheilijoiden suorituksia vertaamalla tiettyjen urheilijoiden ominaisuuksia 
+(kuten nopeutta, voimaa ja strategioita) aiempiin suorituksiin, mikä auttaa valmentajia tekemään päätöksiä harjoitusohjelmista ja ottelutaktiikoista.
+- Pokemon
+Tässä testissä kNN-algoritmilla ennustettiin, onko Pokémonin hyökkäysarvo yli 100, 
+käyttämällä muiden ominaisuuksien (HP, Defense, Sp. Atk, Sp. Def, Speed) arvoja. Mallia testattiin eri K-arvoilla tarkimman ennustustuloksen saavuttamiseksi, ja piirteet standardoitiin tarkkuuden parantamiseksi.
+
 
 Part 2:
 Make experiments on your algorithms with different values of k
 - Kokeiltiin eri arvoilla, tulokset oli aika tasaisia. n. 97-99
+
 Study the effect of different training/testing split portions on your data (like 80/20 training/testing split)
 - Tutkittiin eri arvoilla, tulokset oli aika tasaisia tässäkin.
+
 Try k-Fold approach
 - Kokeiltiin, tasaista täälläkkin.
