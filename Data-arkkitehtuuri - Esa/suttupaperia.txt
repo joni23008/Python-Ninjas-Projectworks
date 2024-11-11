@@ -1,0 +1,4 @@
+mitä halutaan tietää?
+ajanjakso, hinta min, hinta max, hinta avg.
+talvi ja kesä sesonki hinnat. näillä voisi ennustaa ja lätkästä hyvän määräaikaisen sopparin hinnan.
+verratkaa 2021 minkä hintaisia sopimuksia oli tehty vs minkä hintaista pörssisähkö oli.
