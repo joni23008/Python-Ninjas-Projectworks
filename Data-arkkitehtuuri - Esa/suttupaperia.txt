@@ -1,3 +1,9 @@
+miten käsitellään?
+poistetaan kaikki joka ei sisällly 2021 vuoteen.
+contarct
+fixed prices
+prices
+
 mitä halutaan tietää?
 ajanjakso, hinta min, hinta max, hinta avg.
 talvi ja kesä sesonki hinnat. näillä voisi ennustaa ja lätkästä hyvän määräaikaisen sopparin hinnan.
