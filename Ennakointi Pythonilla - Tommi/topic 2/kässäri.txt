@@ -6,20 +6,25 @@ Find some other interesting dataset than the Iris dataset from Kaggle on which y
 - Me valitsimme Heart Failure-datasetin. Heart Failure - datasetissä tarkastellaan miten hyvin saadaan ennustettua sydänsairaudet elämäntapojen perusteella.
 
 Run SVM algorithm on that data
-- Näytä kohdat joissa ajetaan SVM epälineaarinen ja lineaarinen.
+- Näytä kohdat joissa ajetaan SVM epälineaarinen ja lineaarinen. Tai näytä koko koodi.
 
 List 2 interesting use cases for applying SVM algorithm for real world.
 These may or may not be business cases.
-- 
+- keskustelua
+- roskapostin tunnistaminen sähköpostissa. sVM voitaisiin kouluttaa valmiiksi erotellulla datalla jossa on oikeat postit ja roskapostit merkitty. Malli tunnistaisi niistä tiettyjä fraaseja yms. "Olet voittanut" "Tarvitsen tilinumerosi"
+- kasvotunnistus tai muut terveystutkimukset. SVM on käytetty syöpätutkimuksissa. Kuvien perusteella voitaisiin automatisoida esim. röntgenkuvien analysointia.
 
 
 
 Part 2:
+Näytä koottu kuva mikä tehty Paintissa, mis on kuvakaappaukset kaikista kohdista.
+
+
 Train models with and without standard scaler. Study what is the effect if any
 - Erot oli aika huomattavat omasta mielestäni. Tarkistakaa Vilho ja Lauri mitä ootte mieltä.
 
 Study the confusion matrix results and interpret what you saw
-- 
+- Meidän malli antaa meidän mielestä aika hyviä tuloksia, defaulttina c=1 ja testi-osion koko on 80% datasta.
 
 
 Compare SVM results with kNN results
