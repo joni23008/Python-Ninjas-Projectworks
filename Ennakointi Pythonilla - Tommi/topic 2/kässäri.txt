@@ -21,7 +21,14 @@ Näytä koottu kuva mikä tehty Paintissa, mis on kuvakaappaukset kaikista kohdi
 
 
 Train models with and without standard scaler. Study what is the effect if any
-- Erot oli aika huomattavat omasta mielestäni. Tarkistakaa Vilho ja Lauri mitä ootte mieltä.
+-Skaalaamattomassa mallissa enimmistöluokassa 0, Recall on hyvä eli 0.98 ja tarkkuus on kohtuullinen joka on 0.69, mutta 
+vähemmistöluokan 1, Recall ja tarkkuus ovat 0, eli malli ei tunnista yhtään vähemmistöluokkaa.
+
+-Skaalauksen jälkeen enimmistöluokan 0 tarkkuus parani 0.89:een vaikka recall laski
+0.73:een. Mutta nyt vähemmistömalli 1 tunnistaa suurimman osan vähemmistöluokan tapauksista
+jossa Recall on nyt 0.80 ja tarkkuus parani 0.57:ään. Kokonaisuudessa tarkkuus nousi 68%:sta
+75%:iin ja F1-piste parani kaikille luokille.
+
 
 Study the confusion matrix results and interpret what you saw
 - Meidän malli antaa meidän mielestä aika hyviä tuloksia, defaulttina c=1 ja testi-osion koko on 80% datasta.
