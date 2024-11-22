@@ -29,4 +29,11 @@ n. 75% ennustetaan oikein tai saadaan jaoteltua oikein.
 
 
 Compare SVM results with kNN results
-- kNN oli ehkä hieman epätarkempi, kun käytettiin samaa testijakoa ja k sekä c arvot olivat samoja. Tsekatkaa Lauri ja Vilho mitä mieltä.
+- kNN oli ehkä hieman epätarkempi, kun käytettiin samaa testijakoa ja k sekä c arvot olivat samoja.
+- kNN tulos: kun K = 1 tarkkuus oli 72,5%, kun K = 50 tarkkuus laski 69,2%. 
+- Tämä tarkoittaa että tarkkuus heikkenee kun K:n arvoa kasvatetaan. Elikkä KNN malli on herkkä valituille naapurien lukumäärille.
+- SVM tulos: kun C = 1 tarkkuus oli 75%, kun C = 50 tarkkuus parani ja arvo oli 77%
+- Tämä tarkoittaa että SVM suoriutuu paremmin molemmilla C arvoilla, erityisesti kun C = 50 jolloin saatiin paras tarkkuus.
+- SVM päihittää knn-mallin tarkkuudessa SVM=77% knn=72,5%
+- SVM erityisesti C=50 on tässä tapauksessa parempi malli kuin knn, sillä se tarjoaa paremman tarkkuuden ja tasapainoisen
+- suorituskyvyn molempien luokkien tunnistamisessa.
