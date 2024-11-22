@@ -25,6 +25,7 @@ Train models with and without standard scaler. Study what is the effect if any
 
 Study the confusion matrix results and interpret what you saw
 - Meidän malli antaa meidän mielestä aika hyviä tuloksia, defaulttina c=1 ja testi-osion koko on 80% datasta.
+n. 75% ennustetaan oikein tai saadaan jaoteltua oikein. 
 
 
 Compare SVM results with kNN results
