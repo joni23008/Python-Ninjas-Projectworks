@@ -1,0 +1,25 @@
+Powerpoint tai video.
+
+Part 1)
+Find some other interesting dataset than the Iris dataset from Kaggle on which you can perform k-means classification
+- penguins
+Run k-means algorithm on that data. You should use the k-means sklearn version.
+- juujuu
+List 2 interesting use cases for applying k-means algorithm for real world.
+These may or may not be business cases.
+- en vittu tiieä
+
+
+
+Part 2)
+Make experiments on your algorithm with different values of k
+- tää pitäis tehä ehk jollai loopil jos jaksaa
+Utilize the Elbow method
+- check
+Consider what is the effect of different training/testing split portions on your data now (like 80/20 training/testing split we used earlier)
+Hint/Edit: Hmmm!! Think how is the situation now different from supervised learning (kNN) case
+- tänki vois yrittää väsää viel
+Test the effect of various options of the k-means algorithm. (See the sklean documentation for k-means)
+- jotai tästkin
+Decide which experiments you show on submit PowerPoint (or video). No need to show everything by everyone.
+- ok
